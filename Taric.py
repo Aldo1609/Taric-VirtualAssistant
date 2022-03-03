@@ -18,7 +18,8 @@ def talk(text):
 def listen():
     try:
         with sr.Microphone() as source:
-            print("Escuchando..")
+            talk("How can i help you?")
+            print("How can i help you?")
             voice = listener.listen(source)
             rec = listener.recognize_google(voice)
             rec = rec.lower()
@@ -43,5 +44,5 @@ def run():
         info = wikipedia.summary(order, 1)
         talk(info)
     else:
-        talk("No pude entender lo que me dijiste, vuelve a intentarlo")
+        talk("I couldn't understand what you told me, try again")
 run()
